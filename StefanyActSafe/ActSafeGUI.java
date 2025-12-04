@@ -47,6 +47,8 @@ public class ActSafeGUI extends javax.swing.JFrame {
         severityGroup.add(lowRB);
         severityGroup.add(mediumRB);
         severityGroup.add(highRB);
+        
+        AlertSystem.loadAlertsFromFile();
     }
         
 
@@ -658,6 +660,7 @@ public class ActSafeGUI extends javax.swing.JFrame {
         AlertSystem alert = new AlertSystem(condition, severity);
         
         AlertSystem.addAlert(alert);
+        AlertSystem.saveAlertsToFile();
         
         alertTA.setText(alert.getNotificationsText());
         

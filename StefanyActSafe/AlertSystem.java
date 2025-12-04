@@ -61,6 +61,10 @@ public class AlertSystem extends ActSafe {
     public void setSeverityLevel(String severityLevel) {
         this.severityLevel = severityLevel;
     }
+    
+    public void setNotificationsText(String text) {
+        this.notificationsText = text;
+    }
 
     public String getCondition() {
         return condition;
@@ -113,6 +117,35 @@ public class AlertSystem extends ActSafe {
         }
         
         return false;
+    }
+    
+    public static void saveAlertsToFile() {
+        try(java.io.FileWriter fw = new java.io.FileWriter("alerts.txt")) {
+            for (AlertSystem a: alertList) {
+                fw.write(a.condition + "," + a.severityLevel + "," + a.notificationsText.replace("\n", "\\n") + "\n");
+            }
+        } catch (Exception e) {
+            System.out.println("Error writing file: " + e.getMessage());
+        }
+    }
+    
+    public static void loadAlertsFromFile() {
+        java.io.File file = new java.io.File("alerts.txt");
+        if (!file.exists()) return;
+        
+        try (java.util.Scanner sc = new java.util.Scanner(file)) {
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine();
+                String[] parts = line.split(",", 3);
+                if (parts.length ==3) {
+                    AlertSystem a = new AlertSystem(parts[0], parts[1]);
+                    a.setNotificationsText(parts[2].replace("\\n", "\n"));
+                    alertList.add(a);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
     }
     
     @Override
