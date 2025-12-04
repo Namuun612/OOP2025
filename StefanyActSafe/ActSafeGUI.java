@@ -108,7 +108,7 @@ public class ActSafeGUI extends javax.swing.JFrame {
         weatherConditionLBL = new javax.swing.JLabel();
         severityLBL = new javax.swing.JLabel();
         severityCB = new javax.swing.JComboBox<>();
-        sendalertBT = new javax.swing.JButton();
+        sendsavealertBT = new javax.swing.JButton();
         alertLBL = new javax.swing.JLabel();
         alertmenuBT = new javax.swing.JButton();
         weatherConditionCB = new javax.swing.JComboBox<>();
@@ -176,7 +176,7 @@ public class ActSafeGUI extends javax.swing.JFrame {
                     .addGroup(MenuPanelLayout.createSequentialGroup()
                         .addGap(193, 193, 193)
                         .addComponent(menuLBL)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         MenuPanelLayout.setVerticalGroup(
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,7 +276,7 @@ public class ActSafeGUI extends javax.swing.JFrame {
                 .addComponent(photoPreviewLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(panelDamageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelDamageLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                         .addGroup(panelDamageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(descriptionSCROLL, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(locationTF, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -418,7 +418,7 @@ public class ActSafeGUI extends javax.swing.JFrame {
                                         .addComponent(addshelterBT))
                                     .addComponent(locatorLBL)
                                     .addComponent(searchTF))))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         panelLocatorLayout.setVerticalGroup(
             panelLocatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -440,7 +440,7 @@ public class ActSafeGUI extends javax.swing.JFrame {
                 .addComponent(shelterScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(locatormenuBT)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         mainPanel.add(panelLocator, "card3");
@@ -458,10 +458,10 @@ public class ActSafeGUI extends javax.swing.JFrame {
             }
         });
 
-        sendalertBT.setText("Send Alert");
-        sendalertBT.addActionListener(new java.awt.event.ActionListener() {
+        sendsavealertBT.setText("Send/Save Alert");
+        sendsavealertBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sendalertBTActionPerformed(evt);
+                sendsavealertBTActionPerformed(evt);
             }
         });
 
@@ -515,7 +515,7 @@ public class ActSafeGUI extends javax.swing.JFrame {
                 .addGroup(panelAlertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAlertLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addGroup(panelAlertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(panelAlertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelAlertLayout.createSequentialGroup()
                                 .addGroup(panelAlertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(weatherConditionLBL)
@@ -524,15 +524,15 @@ public class ActSafeGUI extends javax.swing.JFrame {
                                 .addGroup(panelAlertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(weatherConditionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(severityCB, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(sendalertBT))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sendsavealertBT))
                             .addGroup(panelAlertLayout.createSequentialGroup()
                                 .addComponent(showalertsBT)
                                 .addGap(18, 18, 18)
                                 .addComponent(searchalertBT)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(deletealertBT))
-                            .addComponent(alertScrollPane1)))
+                            .addComponent(alertScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panelAlertLayout.createSequentialGroup()
                         .addGap(204, 204, 204)
                         .addComponent(alertLBL))
@@ -549,26 +549,22 @@ public class ActSafeGUI extends javax.swing.JFrame {
             .addGroup(panelAlertLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(alertLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alertDescLBL)
                 .addGroup(panelAlertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAlertLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(sendsavealertBT)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alertDescLBL)
-                        .addGroup(panelAlertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelAlertLayout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(severityCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelAlertLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(panelAlertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(weatherConditionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(weatherConditionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(severityLBL)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAlertLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(sendalertBT)
-                        .addGap(37, 37, 37)))
+                        .addComponent(severityCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelAlertLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(panelAlertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(weatherConditionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(weatherConditionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(severityLBL)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(alertScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(panelAlertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -647,7 +643,7 @@ public class ActSafeGUI extends javax.swing.JFrame {
                                       "\nDescription: " + desc);
     }//GEN-LAST:event_submitBTActionPerformed
 
-    private void sendalertBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendalertBTActionPerformed
+    private void sendsavealertBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendsavealertBTActionPerformed
         // TODO add your handling code here:
         String condition = ((String)weatherConditionCB.getSelectedItem()).trim();
         String severity = (String) severityCB.getSelectedItem();
@@ -664,7 +660,7 @@ public class ActSafeGUI extends javax.swing.JFrame {
         
         alertTA.setText(alert.getNotificationsText());
         
-    }//GEN-LAST:event_sendalertBTActionPerformed
+    }//GEN-LAST:event_sendsavealertBTActionPerformed
 
     private void searchTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTFActionPerformed
         // TODO add your handling code here:
@@ -878,7 +874,7 @@ public class ActSafeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel searchLBL;
     private javax.swing.JTextField searchTF;
     private javax.swing.JButton searchalertBT;
-    private javax.swing.JButton sendalertBT;
+    private javax.swing.JButton sendsavealertBT;
     private javax.swing.JComboBox<String> severityCB;
     private javax.swing.ButtonGroup severityGroup;
     private javax.swing.JLabel severityLBL;
